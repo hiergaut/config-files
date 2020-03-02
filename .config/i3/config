@@ -1,0 +1,226 @@
+#! /bin/bash\n
+set $primary DVI-D-0
+set $fontSize 12
+set $browser chromium
+
+
+
+#end file ----------------------------------
+set $altG Mod1
+set $meta Mod4
+
+font pango:Ubuntu Mono $fontSize
+
+# Shortcut
+bindsym $altG+t exec termite
+bindsym $altG+shift+T exec thunderbird
+bindsym $altG+BackSpace kill
+bindsym $altG+d exec dmenu_run
+bindsym $altG+c exec xdotool click 1 && xdotool keydown Escape
+bindsym $altG+f exec $browser
+
+# focused window
+bindsym $altG+b focus left
+bindsym $altG+m focus down
+bindsym $altG+h focus up
+bindsym $altG+w focus right
+
+# move focused window
+bindsym $altG+Shift+B move left
+bindsym $altG+Shift+M move down
+bindsym $altG+Shift+H move up
+bindsym $altG+Shift+W move right
+
+# split in horizontal orientation
+bindsym $altG+l split h
+
+# split in vertical orientation
+bindsym $altG+j split v
+
+# enter fullscreen mode for the focused container
+bindsym $altG+space fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $altG+a layout stacking
+bindsym $altG+e layout tabbed
+bindsym $altG+u layout toggle split
+
+# toggle tiling / floating
+bindsym $altG+i floating toggle
+
+# change focus between tiling / floating windows
+bindsym $altG+y focus mode_toggle
+
+# focus the parent container
+bindsym $altG+p focus parent
+# bindsym $altG+p exec --no-startup-id gpick -p
+
+# focus the child container
+# bindsym $altG+Shift+c focus child
+
+# switch to workspace
+bindsym $altG+asterisk exec --no-startup-id ~/bin/own_screen_workspace 0
+bindsym $altG+parenright exec --no-startup-id ~/bin/own_screen_workspace 2
+bindsym $altG+plus exec --no-startup-id ~/bin/own_screen_workspace 4
+bindsym $altG+bracketright exec --no-startup-id ~/bin/own_screen_workspace 6
+bindsym $altG+exclam exec --no-startup-id ~/bin/own_screen_workspace 8
+bindsym $altG+equal exec --no-startup-id ~/bin/own_screen_workspace 9
+
+
+# bindsym $altG+braceleft exec --no-startup-id ~/bin/own_screen_new $screen_2
+# bindsym $altG+bracketleft exec --no-startup-id ~/bin/own_screen_new $screen_3
+
+bindsym $altG+shift+o exec --no-startup-id ~/bin/own_screen_displayPrimaryOnly
+bindsym $altG+shift+a exec ~/bin/own_screen_displayAll
+bindsym $altG+Shift+c exec ~/bin/own_primaryToClipboard
+
+# move focused container to workspace
+# bindsym $altG+Shift+0 move container to workspace 0; workspace 0
+# bindsym $altG+Shift+2 move container to workspace 2; workspace 2
+# bindsym $altG+Shift+4 move container to workspace 4; workspace 4
+# bindsym $altG+Shift+6 move container to workspace 6; workspace 6
+# bindsym $altG+Shift+8 move container to workspace 8; workspace 8
+
+bindsym $altG+Shift+0 exec ~/bin/own_screen_moveWorkspace 0
+bindsym $altG+Shift+2 exec ~/bin/own_screen_moveWorkspace 2
+bindsym $altG+Shift+4 exec ~/bin/own_screen_moveWorkspace 4
+bindsym $altG+Shift+6 exec ~/bin/own_screen_moveWorkspace 6
+bindsym $altG+Shift+8 exec ~/bin/own_screen_moveWorkspace 8
+
+# reload the configuration file
+# bindsym $altG+r reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $altG+Shift+R restart
+# exit i3 (logs you out of your X session)
+# bindsym $altG+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+
+bindsym $meta+F1 exec ~/bin/own_keyboardInit
+bindsym $meta+F2 exec ~/bin/own_keyboardFR
+# bindsym $meta+F4 exec feh --bg-fill --randomize ~/picture/hack/
+bindsym $meta+F4 exec feh --bg-fill --randomize ~/picture/arch/
+bindsym $meta+BackSpace exec --no-startup-id ~/bin/own_screen_light '+' $primary
+bindsym $meta+Return exec --no-startup-id ~/bin/own_screen_light '-' $primary
+bindsym $meta+F8 exec systemctl suspend
+bindsym $meta+Next exec ~/bin/own_i3_end "poweroff"
+# bindsym $meta+Next exec ~/bin/own_archlinux_poweroffByI3
+bindsym $meta+Prior exec ~/bin/own_i3_end "reboot"
+bindsym $meta+space exec --no-startup-id ~/bin/own_screen_light '0' $primary
+
+# Browser Shortcut
+# bindsym $meta+r exec $browser http://www.switchradio.fr/capytol
+bindsym $meta+r exec $browser https://www.radiosanspub.fr/
+# bindsym $meta+r exec $browser http://laradiosanspub.radio.fr/
+# bindsym $meta+r exec $browser https://www.radio.fr/s/laradiosanspub
+# bindsym $meta+r exec $browser http://www.allzicradio.com/en/player/listen/1950/la-radio-sans-pub
+# bindsym $meta+s exec $browser https://s2-m1a.slack.com/messages
+bindsym $meta+s exec $browser https://ups-master-igai.slack.com/
+bindsym $meta+m exec $browser https://moodle.univ-tlse3.fr/login/index.php
+bindsym $meta+t exec $browser https://translate.google.fr/?hl=fr#en/fr/
+# bindsym $meta+t exec $browser https://www.deepl.com/translator
+bindsym $meta+shift+T exec $browser https://translate.google.fr/?hl=fr#fr/en/
+# bindsym $meta+b exec $browser http://www.bbc.co.uk/radio/player/bbc_world_service
+bindsym $meta+b exec $browser https://www.bbc.co.uk/sounds/play/live:bbc_world_service
+bindsym $meta+shift+B exec $browser http://www.bbc.co.uk/radio/player/bbc_radio_fourfm
+bindsym $meta+h exec $browser http://snqffu6qthpfbg8vq6sr.fr.nf:52560
+bindsym $meta+l exec $browser "http://edt.univ-tlse3.fr/calendar/default.aspx?View=week&Type=group&ResourceName=formation_EMINGE_s2_CMA"
+bindsym $meta+g exec $browser https://github.com/hiergaut/
+bindsym $meta+f exec $browser https://trello.com/b/qScRPME1/father-task
+bindsym $meta+a exec vlc ~/music/training.mp3
+
+# resize window (you can also use the mouse for that)
+set $int 10
+bindsym $meta+minus resize shrink width $int px or $int ppt
+bindsym $meta+plus resize grow width $int px or $int ppt
+bindsym $meta+Shift+minus resize shrink height $int px or $int ppt
+bindsym $meta+Shift+plus resize grow height $int px or $int ppt
+
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/bin/own_archlinux_sound '+'
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/bin/own_archlinux_sound '-'
+bindsym XF86AudioMute exec --no-startup-id ~/bin/own_archlinux_sound 'toggle'
+
+bindsym --release Print exec --no-startup-id scrot -s -o ~/screen.png
+bindsym --release Shift+Print exec --no-startup-id scrot -o ~/screen.png
+
+
+# workspace "5:0" output $screen_2
+# workspace "5:2" output $screen_2
+# workspace "5:4" output $screen_2
+#
+# workspace "7:0" output $screen_3
+# workspace "7:2" output $screen_3
+# workspace "7:4" output $screen_3
+
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar 
+{
+    mode hide
+    modifier $altG
+    # modifier $meta
+    # output $screen_1
+    # status_command ~/.config/i3/i3bar.sh
+    # status_command ~/.config/i3/barlight.sh $screen_1
+
+    # colors 
+    # {
+    #     background #333333
+    # }
+}
+
+# bar
+# {
+#     status_command ~/.config/i3/barlight.sh $screen_2
+#
+#     mode hide
+#     # modifier $altG
+#     modifier $meta
+#     output $screen_2
+# }
+#
+# bar
+# {
+#     status_command ~/.config/i3/barlight.sh $screen_3
+#
+#     mode hide
+#     # modifier $altG
+#     modifier $meta
+#     output $screen_3
+# }
+
+set $void       #000000
+set $activeEdge #FF8800
+set $offEdge    #000000
+set $offEdge2   #000000
+
+
+for_window [class="^.*"] border pixel 1
+new_window 1pixel
+
+# window colors
+# class						border		background	    text		indicator       child_border
+client.focused				$void		$activeEdge	    $void       $activeEdge     $activeEdge
+client.focused_inactive		$void		$void	        $void       $offEdge2	    $offEdge2
+client.unfocused			$void		$void	        #FFFFFF     $offEdge	    $offEdge
+
+# client.urgent				$border-color		$urgent-bg-color			$text-color						$indicator-color		#900000
+# client.placeholder		#00FF00				#000000						#000000					#000000		#0C0C0C
+# client.background			#ffffff
+# client.background           #000000
+# hide_edge_borders both
+
+# exec always ~/bin/own_screen_wallpaper
+# exec ~/bin/own_screen_displayPrimaryOnly
+# exec ~/bin/own_screen_displayAll
+
+exec_always feh --bg-fill --randomize ~/"$(cat ~/var/$(cat /etc/hostname)/wallpaper)"
+
+exec ~/bin/own_screen_displayAll
+
+#exec canberra-gtk-play -f /usr/share/sounds/freedesktop/stereo/service-login.oga
+
+exec i3-msg workspace 1
+exec i3-msg workspace 0
+exec own_sound_play /usr/share/sounds/freedesktop/stereo/service-login.oga
