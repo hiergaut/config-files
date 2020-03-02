@@ -1,0 +1,211 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+	{
+		"key": "end",
+		"command": "workbench.action.nextEditor",
+		"when": "vim.mode == 'Normal'"
+	},
+	{
+		"key": "home",
+		"command": "workbench.action.previousEditor",
+		"when": "vim.mode == 'Normal'"
+	},
+	{
+		"key": "right",
+		// "command": "extension.vim_navigateRight",
+		"command": "workbench.action.navigateRight",
+		"when": "vim.mode == 'Normal'"
+	},
+	{
+		"key": "left",
+		// "command": "extension.vim_navigateLeft",
+		"command": "workbench.action.navigateLeft",
+		"when": "vim.mode == 'Normal'"
+	},
+	{
+		"key": "up",
+		// "command": "extension.vim_navigateLeft",
+        "command": "workbench.action.navigateUp",
+
+		"when": "vim.mode == 'Normal' && terminalFocus"
+        // "when": "editorTextFocus && vim.mode == 'Normal'"
+	},
+	{
+		"key": "down",
+		// "command": "extension.vim_navigateLeft",
+		"command": "workbench.action.navigateDown",
+		// "when": "vim.mode == 'Normal'"
+		"when": "editorTextFocus && vim.mode == 'Normal'"
+	},
+	{
+		"key": "ctrl+w",
+		"command": "workbench.action.closeActiveEditor",
+		"when": "vim.mode == 'Normal'"
+	},
+	{
+		"key": "ctrl+z",
+		"command": "workbench.action.toggleZenMode"
+	},
+	// {
+	//     "key": "=",
+	//     "command": "workbench.action.evenEditorWidths",
+	//     "when": "vim.mode != 'Insert'"
+	// },
+	// {
+	// 	"key": "ctrl+r",
+	// 	"command": "workbench.action.tasks.build"
+	// },
+	{
+		"key": "shift+right",
+		"command": "workbench.action.moveEditorToNextGroup"
+	},
+	{
+		"key": "shift+left",
+		"command": "workbench.action.moveEditorToPreviousGroup"
+	},
+	// {
+	//     "key": "down",
+	//     "command": "workbench.action.splitEditor",
+	//     "when": "editorTextFocus && vim.mode != 'Insert'"
+	// },
+	{
+		"key": "alt+enter",
+		"command": "editor.action.goToDeclaration",
+		"when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor && vim.mode == 'Normal'"
+	},
+	{
+		"key": "shift+h",
+		"command": "editor.foldRecursively",
+		"when": "editorTextFocus && vim.mode == 'Normal'"
+	},
+	{
+		"key": "shift+l",
+		"command": "editor.unfoldRecursively",
+		"when": "editorTextFocus && vim.mode == 'Normal'"
+	},
+	{
+		"key": "ctrl+n",
+		"command": "explorer.newFile"
+	},
+	{
+		"key": "ctrl+p",
+		"command": "workbench.action.problems.focus",
+		"when": "vim.mode == 'Normal'"
+	},
+	{
+		"key": "ctrl+t",
+		"command": "workbench.action.terminal.focus",
+		"when": "vim.mode == 'Normal'"
+	},
+	{
+		"key": "ctrl+shift+9",
+		"command": "workbench.action.increaseViewSize",
+		"when": "editorTextFocus && vim.mode == 'Normal'"
+	},
+	{
+		"key": "ctrl+shift+-",
+		"command": "workbench.action.decreaseViewSize",
+		"when": "editorTextFocus && vim.mode == 'Normal'"
+	},
+	{
+		"key": "ctrl+shift+d",
+		"command": "editor.action.previewDeclaration",
+		"when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+	},
+	{
+		"key": "ctrl+shift+f10",
+		"command": "-editor.action.previewDeclaration",
+		"when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+	},
+	{
+		"key": "ctrl+shift+t",
+		"command": "editor.action.peekTypeDefinition"
+	},
+	{
+		"key": "ctrl+enter",
+		"command": "workbench.action.tasks.runTask",
+		"args": "echo",
+		"when": "editorTextFocus && vim.mode == 'Normal'"
+	},
+	{
+		"key": "space",
+		"command": "editor.action.marker.next",
+		"when": "editorTextFocus && vim.mode == 'Normal'"
+	},
+	{
+		"key": "shift+space",
+		"command": "editor.action.marker.prev",
+		"when": "editorTextFocus && vim.mode == 'Normal'"
+	},
+	{
+		"key": "tab",
+		"command": "workbench.action.gotoSymbol",
+		"when": "editorTextFocus && vim.mode == 'Normal'"
+	},
+	{
+		"key": "n",
+		"command": "workbench.action.debug.stepOver",
+		"when": "inDebugMode && editorTextFocus"
+	},
+	{
+		"key": "ctrl+b",
+		"command": "workbench.action.tasks.build",
+		"when": "editorTextFocus && vim.mode == 'Normal'"
+	},
+	{
+		"key": "s",
+		"command": "workbench.action.debug.stepInto",
+		"when": "inDebugMode"
+	},
+	{
+		"key": "f11",
+		"command": "-workbench.action.debug.stepInto",
+		"when": "inDebugMode"
+	},
+	{
+		"key": "o",
+		"command": "workbench.action.debug.stepOut",
+		"when": "inDebugMode"
+	},
+	{
+		"key": "shift+f11",
+		"command": "-workbench.action.debug.stepOut",
+		"when": "inDebugMode"
+	},
+	{
+		"key": "ctrl+shift+s",
+		"command": "-workbench.action.files.saveAs"
+	},
+	{
+		"key": "ctrl+shift+s",
+		"command": "workbench.action.files.saveAll"
+	},
+	{
+		"key": "ctrl+shift+c",
+		"command": "python.datascience.runcell"
+    },
+    {
+        "key": "ctrl+shift+d",
+        "command": "-workbench.view.debug"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "showNextParameterHint",
+        "when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
+    },
+    {
+        "key": "down",
+        "command": "-showNextParameterHint",
+        "when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "showPrevParameterHint",
+        "when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
+    },
+    {
+        "key": "up",
+        "command": "-showPrevParameterHint",
+        "when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
+    },
+]
