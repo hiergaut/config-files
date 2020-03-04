@@ -1,0 +1,172 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "end",
+        "command": "workbench.action.nextEditor",
+        // "when": "vim.mode == 'Normal' && editorTextFocus &&  inputFocus"
+    },
+    {
+        "key": "home",
+        "command": "workbench.action.previousEditor",
+    },
+    {
+        "key": "right",
+        "command": "workbench.action.navigateRight",
+    },
+    {
+        "key": "left",
+        "command": "workbench.action.navigateLeft",
+    },
+    {
+        "key": "shift+right",
+        "command": "workbench.action.moveEditorToNextGroup"
+    },
+    {
+        "key": "shift+left",
+        "command": "workbench.action.moveEditorToPreviousGroup"
+    },
+    {
+        "key": "down",
+        "command": "workbench.action.navigateDown",
+        "when": "editorTextFocus && vim.mode == 'Normal'"
+    },
+    {
+        "key": "up",
+        "command": "workbench.action.navigateUp",
+        "when": "editorTextFocus && vim.mode == 'Normal' || terminalFocus || inDebugRepl "
+    },
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.closeActiveEditor",
+        "when": "vim.mode == 'Normal'"
+    },
+    {
+        "key": "alt+enter",
+        "command": "editor.action.goToDeclaration"
+    },
+    {
+        "key": "ctrl+n",
+        // "command": "-workbench.action.files.newUntitledFile",
+        "command": "explorer.newFile"
+    },
+    {
+        "key": "alt+p",
+        "command": "workbench.action.problems.focus"
+    },
+    {
+        "key": "alt+t",
+        "command": "workbench.action.terminal.focus"
+    },
+    {
+        "key": "alt+d",
+        "command": "workbench.debug.action.toggleRepl"
+    },
+    {
+        "key": "alt+o",
+        "command": "workbench.action.output.toggleOutput"
+    },
+    {
+        "key": "ctrl+space",
+        "command": "editor.action.previewDeclaration"
+    },
+    {
+        "key": "ctrl+shift+t",
+        "command": "editor.action.peekTypeDefinition"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "showNextParameterHint",
+        "when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "showPrevParameterHint",
+        "when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
+    },
+    {
+        "key": "shift+h",
+        "command": "editor.foldRecursively",
+        "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+        "key": "shift+l",
+        "command": "editor.unfoldRecursively",
+        "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+        "key": "shift+alt+4",
+        "command": "workbench.action.increaseViewSize"
+    },
+    {
+        "key": "shift+alt+oem_minus",
+        "command": "workbench.action.decreaseViewSize"
+    },
+    {
+        "key": "space",
+        "command": "editor.action.marker.next",
+        "when": "editorFocus && !editorReadonly && vim.mode == 'Normal'"
+    },
+    {
+        "key": "shift+space",
+        "command": "editor.action.marker.prev",
+        "when": "editorFocus && !editorReadonly && vim.mode == 'Normal'"
+    },
+    {
+        "key": "ctrl+tab",
+        // "command": "workbench.action.quickOpen"
+        "command": "workbench.action.gotoSymbol"
+    },
+    // {
+    //     "key": "ctrl+p",
+    //     "command": "-workbench.action.quickOpen"
+    // },
+    {
+        "key": "n",
+        "command": "workbench.action.debug.stepOver",
+        "when": "debugState == 'stopped'"
+    },
+    {
+        "key": "s",
+        "command": "workbench.action.debug.stepInto",
+        "when": "debugState != 'inactive'"
+    },
+    {
+        "key": "o",
+        "command": "workbench.action.debug.stepOut",
+        "when": "debugState == 'stopped'"
+        // "when": "inDebugMode"
+    },
+    {
+        "key": "shift+w",
+        "command": "workbench.action.files.saveAll",
+        "when": "editorTextFocus && vim.mode == 'Normal'"
+    },
+    // {
+    //     "key": "ctrl+k s",
+    //     "command": "-workbench.action.files.saveAll"
+    // },
+    {
+        "key": "w",
+        "command": "workbench.action.files.save",
+        "when": "editorTextFocus && vim.mode == 'Normal'"
+    },
+    {
+        "key": "b",
+        "command": "cmake.build",
+        "when": "editorTextFocus && vim.mode == 'Normal'"
+    },
+    {
+        "key": "enter",
+        "command": "workbench.action.debug.start",
+        // "when": "!inDebugMode"
+        "when": "editorTextFocus && vim.mode == 'Normal' && !inDebugMode"
+    },
+    // {
+    //     "key": "ctrl+shift+u",
+    //     "command": "-workbench.action.output.toggleOutput"
+    // },
+    // {
+    //     "key": "ctrl+s",
+    //     "command": "-workbench.action.files.save"
+    // },
+]
