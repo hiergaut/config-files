@@ -1,0 +1,18 @@
+#! /bin/sh -e
+PATH="$PATH:$HOME/bin/"
+
+screen=$(own_screen_underMouse)
+
+if [ $screen = $(own_screen_primary) ]
+then
+
+    i3-msg move container to workspace $1 
+    i3-msg workspace $1
+
+else
+
+    # id="$(own_screen_numForBar $screen)"
+    # i3-msg move container to workspace $id:$1
+    i3-msg move container to workspace $screen:$1
+    i3-msg workspace $screen:$1
+fi
