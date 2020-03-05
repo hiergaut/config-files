@@ -1,0 +1,8 @@
+#! /bin/sh -e
+
+host=$(cat /etc/hostname)
+if [ -e ~/var/$host/primary ]; then
+	cat ~/var/$host/primary
+else
+	xrandr | grep primary | awk '{print $1}'
+fi

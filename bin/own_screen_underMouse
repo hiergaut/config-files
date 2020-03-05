@@ -1,0 +1,21 @@
+#!/bin/sh -e
+
+# x=$(xdotool getmouselocation | awk -F'[: ]' '{print $2}')
+# y=$(xdotool getmouselocation | awk -F'[: ]' '{print $4}')
+#
+# for ecran in $(xrandr | grep ' connected ' | awk '{print $1}')
+# do
+# 	XMin=$(xrandr | grep $ecran | awk -F'[+ ]' '{print $4}')
+# 	XMax=$(xrandr | grep $ecran | awk -F'[+x ]' '{print $3 +$5}')
+# 	YMin=$(xrandr | grep $ecran | awk -F'[+ ]' '{print $5}')
+# 	YMax=$(xrandr | grep $ecran | awk -F'[+x ]' '{print $4+$6}')
+#
+# 	if [ $x -gt $XMin ] && [ $x -lt $XMax ] && [ $y -gt $YMin ] && [ $y -lt $YMax ]
+# 	then
+# 		echo $ecran
+# 		break
+# 	fi
+# done
+
+# i3-msg -t get_workspaces | sed s/},{/\\n/g | grep focused\":true | awk -F\" '{print $24}'
+i3-msg -t get_workspaces | sed 's/},{/\\\n/g' | grep 'focused\":true' | sed 's/.*"output":"\(.*\)",".*/\1/'

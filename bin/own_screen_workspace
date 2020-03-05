@@ -1,0 +1,16 @@
+#! /bin/sh -e
+# PATH="$PATH:$HOME/bin/"
+
+screen=$(own_screen_underMouse)
+
+# if [ $screen = $(cat ~/var/$(cat /etc/hostname)/screen_1) ]
+if [ $screen = $(own_screen_primary) ]
+then
+
+    i3-msg workspace $1
+
+else
+
+    # i3-msg workspace "$(own_screen_numForBar $screen):$1"
+    i3-msg workspace "$screen:$1"
+fi
