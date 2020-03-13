@@ -4,18 +4,22 @@
         "key": "end",
         "command": "workbench.action.nextEditor",
         // "when": "vim.mode == 'Normal' && editorTextFocus &&  inputFocus"
+        "when": "vim.mode == 'Normal'"
     },
     {
         "key": "home",
         "command": "workbench.action.previousEditor",
+        "when": "vim.mode == 'Normal'"
     },
     {
         "key": "right",
         "command": "workbench.action.navigateRight",
+        "when": "vim.mode == 'Normal'"
     },
     {
         "key": "left",
         "command": "workbench.action.navigateLeft",
+        "when": "vim.mode == 'Normal'"
     },
     {
         "key": "shift+right",
@@ -65,10 +69,15 @@
         "key": "alt+o",
         "command": "workbench.action.output.toggleOutput"
     },
+    // {
+    //     "key": "ctrl+space",
+    //     "command": "editor.action.previewDeclaration"
+    // },
     {
-        "key": "ctrl+space",
-        "command": "editor.action.previewDeclaration"
-    },
+		"key": "ctrl+space",
+		"command": "editor.action.previewDeclaration",
+		"when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+	},
     {
         "key": "ctrl+shift+t",
         "command": "editor.action.peekTypeDefinition"
@@ -83,16 +92,16 @@
         "command": "showPrevParameterHint",
         "when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
     },
-    {
-        "key": "shift+h",
-        "command": "editor.foldRecursively",
-        "when": "editorTextFocus && foldingEnabled"
-    },
-    {
-        "key": "shift+l",
-        "command": "editor.unfoldRecursively",
-        "when": "editorTextFocus && foldingEnabled"
-    },
+    // {
+    //     "key": "shift+h",
+    //     "command": "editor.foldRecursively",
+    //     "when": "editorTextFocus && foldingEnabled"
+    // },
+    // {
+    //     "key": "shift+l",
+    //     "command": "editor.unfoldRecursively",
+    //     "when": "editorTextFocus && foldingEnabled"
+    // },
     {
         "key": "shift+alt+4",
         "command": "workbench.action.increaseViewSize"
@@ -128,7 +137,8 @@
     {
         "key": "s",
         "command": "workbench.action.debug.stepInto",
-        "when": "debugState != 'inactive'"
+        // "when": "debugState != 'inactive'"
+        "when": "editorFocus  && vim.mode == 'Normal' && debugState != 'inactive'"
     },
     {
         "key": "o",
@@ -136,37 +146,82 @@
         "when": "debugState == 'stopped'"
         // "when": "inDebugMode"
     },
-    {
-        "key": "shift+w",
-        "command": "workbench.action.files.saveAll",
-        "when": "editorTextFocus && vim.mode == 'Normal'"
-    },
+    // {
+    //     "key": "shift+w",
+    //     "command": "workbench.action.files.saveAll",
+    //     "when": "editorTextFocus && vim.mode == 'Normal'"
+    // },
     // {
     //     "key": "ctrl+k s",
     //     "command": "-workbench.action.files.saveAll"
     // },
-    {
-        "key": "w",
-        "command": "workbench.action.files.save",
-        "when": "editorTextFocus && vim.mode == 'Normal'"
-    },
+    // { // disable cw vim
+    //     "key": "w",
+    //     "command": "workbench.action.files.save",
+    //     "when": "editorTextFocus && vim.mode == 'Normal'"
+    // },
     {
         "key": "b",
         "command": "cmake.build",
         "when": "editorTextFocus && vim.mode == 'Normal'"
     },
     {
-        "key": "enter",
+        "key": "ctrl+enter",
         "command": "workbench.action.debug.start",
         // "when": "!inDebugMode"
         "when": "editorTextFocus && vim.mode == 'Normal' && !inDebugMode"
     },
+    {
+        "key": "ctrl+enter",
+        "command": "workbench.action.debug.stop",
+        "when": "inDebugMode"
+    },
+    {
+        "key": "enter",
+        "command": "cmake.launchTarget",
+        // "when": "!cmake:hideDebugCommand"
+        "when": "editorTextFocus && vim.mode == 'Normal' && !inDebugMode && ! cmake.hideDebugCommand"
+    },
+    {
+        "key": "ctrl+shift+i",
+        "command": "editor.action.formatDocument",
+        "when": "editorHasDocumentFormattingProvider && editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+m",
+        "command": "workbench.action.toggleMaximizedPanel"
+    },
+    {
+        "key": "ctrl+shift+n",
+        "command": "explorer.newFolder"
+    },
+    {
+        "key": "shift+h",
+        "command": "workbench.files.action.collapseExplorerFolders",
+        "when": "! editorTextFocus && vim.mode == 'Normal'"
+    },
+    {
+		"key": "shift+h",
+		"command": "editor.foldRecursively",
+		"when": "editorTextFocus && vim.mode == 'Normal'"
+	},
+	{
+		"key": "shift+l",
+		"command": "editor.unfoldRecursively",
+		"when": "editorTextFocus && vim.mode == 'Normal'"
+    },
     // {
-    //     "key": "ctrl+shift+u",
-    //     "command": "-workbench.action.output.toggleOutput"
+    //     "key": "ctrl+shift+d",
+    //     "command": "editor.action.addSelectionToNextFindMatch",
+    //     "when": "editorFocus"
     // },
     // {
-    //     "key": "ctrl+s",
-    //     "command": "-workbench.action.files.save"
+    //     "key": "ctrl+d",
+    //     "command": "-editor.action.addSelectionToNextFindMatch",
+    //     "when": "editorFocus"
     // },
+    // {
+    //     "key": "ctrl+j",
+    //     "command": "workbench.files.action.focusFilesExplorer"
+    // }
 ]
