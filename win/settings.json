@@ -1,0 +1,100 @@
+{
+    "window.zoomLevel": 0,
+    "editor.lineNumbers": "off",
+    "editor.minimap.enabled": false,
+    "C_Cpp.updateChannel": "Insiders",
+    "workbench.colorTheme": "Default Light+",
+	"editor.tabCompletion": "on",
+	
+	"editor.tabSize": 4,
+	"C_Cpp.clang_format_style": "{ UseTab: Always, IndentWidth: 4, TabWidth: 4 }",
+
+	"workbench.editor.enablePreview": false,
+
+	// "clang.cxxflags": [
+	// 	"-Wall",
+	// 	"-Wextra",
+	// 	"-Wpedantic",
+	// 	"-Weffc++",
+	// ],
+	// "editor.showFoldingControls": "always",
+	// "editor.folding": true,
+	// "editor.foldingStrategy": "indentation",
+	"vim.foldfix": true,
+	// "vim.easmotion": true,
+	// "vim.useCtrlKeys": true,
+	// "editor.smoothScrolling": true,
+
+
+	// "window.titleBarStyle": "custom",
+	// "files.autoSave": "afterDelay",
+	// "files.autoSaveDelay": 500,
+
+    // "workbench.colorCustomizations": {
+    //     "statusBar.background": "#005f5f",
+    //     "statusBar.noFolderBackground": "#005f5f",
+    //     "statusBar.debuggingBackground": "#005f5f"
+    // },
+    // "workbench.activityBar.visible": true,
+    // "window.titleBarStyle": "custom",
+    // "editor.showFoldingControls": "always",
+	// "editor.folding": true,
+	// "editor.foldingStrategy": "indentation",
+	// "vim.foldfix": true,
+	// "vim.useSystemClipboard": true,
+	// "vim.statusBarColorControl": true,
+	// "window.menuBarVisibility": "default",
+	// // "vim.statusBarColors": {
+	// // "clang.completion.triggerChars": [
+	// "editor.acceptSuggestionOnEnter": "off",
+	// "[cpp]": {
+	// 	"editor.autoIndent": true
+	// },
+
+    "vim.easymotion": true,
+	"vim.leader": "m",
+	// "vim.easymotionMarkerFontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+	// "keyboard.dispatch": "keyCode",
+	// "vim.easymotionMarkerBackgroundColor": "#272822",
+	"vim.easymotionMarkerForegroundColorOneChar": "#00FF00",
+	"vim.easymotionMarkerForegroundColorTwoChar": "#FF0000",
+	"vim.easymotionKeys": "aoeuidhtns-'qjkxbmwvz\\;,.pyfgcrla",
+	"vim.easymotionMarkerYOffset": 5,
+	// "python.linter": "flake8",
+	// "python.linting.pylintEnabled": true,
+	// "python.linting.pylintEnabled": true,
+	// "vim.easymotionMarkerFontSize": "20",
+	// "vim.easymotionMarkerHeight": 20,
+	// "vim.easymotionMarkerWidthPerChar": 16,
+	"vim.normalModeKeyBindingsNonRecursive": [
+		{
+			"before": [
+				"f"
+			],
+			"after": [
+				"leader",
+				"leader",
+				"f"
+			]
+		},
+		{
+			"before": [
+				"F"
+			],
+			"after": [
+				"leader",
+				"leader",
+				"F"
+			]
+		}
+	],
+	"C_Cpp.clang_format_fallbackStyle": "LLVM",
+	"files.associations": {
+		"*.sc": "glsl"
+	},
+    // "workbench.colorCustomizations": {
+	// 	"statusBar.background": "#5f00af",
+	// 	"statusBar.noFolderBackground": "#5f00af",
+	// 	"statusBar.debuggingBackground": "#5f00af"
+	// },
+}
